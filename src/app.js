@@ -13,4 +13,16 @@ app.use(e.json({limit:"16kb"}))
 app.use(e.urlencoded({extended: true, limit:"16kb"}))
 app.use(e.static("public"))
 app.use(cookieParser())
+
+//routes
+import userRouter from "./routes/user.routes.js";
+
+
+//routes declaration
+
+app.use("/api/v1/users", userRouter)
+
+//POST http://localhost:<PORT>/api/v1/users/register  this will be the URL
+
+
 export {app}
